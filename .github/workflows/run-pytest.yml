@@ -36,7 +36,7 @@ jobs:
            pip install -r requirements.txt
       - name: Test with pytest
         run: |
-          python -m pytest --junitxml=self_investment/docs/tests/junit.xml --html=self_investment/docs/tests/report.html
+          python -m pytest --junitxml=self_investment/docs/tests/junit.xml --html=self_investment/docs/tests/report.html --self-contained-html
       - name: Generate Tests Badge
         run: |
           genbadge tests --input-file=self_investment/docs/tests/junit.xml --output-file=self_investment/docs/badges/tests-badge.svg
