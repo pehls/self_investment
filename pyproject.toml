@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "self-investment"
+version = "0.1.0"
+description = ""
+authors = ["Gabriel Pehls <gabrielpehls@hotmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^2.2.3"
+numpy = "^2.1.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
