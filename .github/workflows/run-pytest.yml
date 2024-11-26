@@ -27,31 +27,32 @@ jobs:
         uses: abatilo/actions-poetry@v2
         with:
           poetry-version: ${{ matrix.poetry-version }}
-      - name: Install dependencies from poetry
+      - name: Install dependencies from poetry and activate
         run: |
           poetry install
+          .venv\Scripts\activate
       - name: Install Dependencies from pip
         run: |
            pip install -r requirements.txt
       - name: Test with pytest
         run: |
-          python -m pytest --junitxml=docs/tests/junit.xml --html=docs/tests/report.html
+          python -m pytest --junitxml=self_investment/docs/tests/junit.xml --html=self_investment/docs/tests/report.html
       - name: Generate Tests Badge
         run: |
-          genbadge tests --input-file=docs/tests/junit.xml --output-file=docs/badges/tests-badge.svg
+          genbadge tests --input-file=self_investment/docs/tests/junit.xml --output-file=self_investment/docs/badges/tests-badge.svg
       - name: Run Test Coverage Report
         run: |
-          coverage run -m pytest --junitxml=docs/tests/junit.xml --html=docs/tests/report.html
+          coverage run -m pytest --junitxml=self_investment/docs/tests/junit.xml --html=self_investment/docs/tests/report.html
           coverage report
       - name: Run Test Coverage XML
         run: |
           coverage xml -o docs/tests/coverage.xml
       - name: Run Test Coverage HTML
         run: |
-          coverage html --directory=docs/tests/coverage.html
+          coverage html --directory=self_investment/docs/tests/coverage.html
       - name: Generate Coverage Badge
         run: |
-          genbadge coverage --input-file=docs/tests/coverage.xml --output-file=docs/badges/coverage-badge.svg
+          genbadge coverage --input-file=self_investment/docs/tests/coverage.xml --output-file=self_investment/docs/badges/coverage-badge.svg
       - name: Add and Commit changes
         uses:  EndBug/add-and-commit@v9
         with:
