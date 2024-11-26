@@ -30,7 +30,7 @@ jobs:
       - name: Install dependencies from poetry and activate
         run: |
           poetry install
-          source '.venv\Scripts\activate'
+          source '\home\runner\.cache\pypoetry\virtualenvs\Scripts\activate'
       - name: Install Dependencies from pip
         run: |
            pip install -r requirements.txt
