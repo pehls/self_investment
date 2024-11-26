@@ -56,6 +56,7 @@
 
 --------
 
+* Documentation: <https://pehls.github.io/self_investment/>
 
 # Venv
 to activate, in a windows terminal, inside `self_investment` folder, put `.venv\Scripts\activate`
